@@ -1,0 +1,149 @@
+.header {
+  max-width: 880px;
+  margin: 45px auto 0px;
+}
+
+.header__content {
+  max-width: 880px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  max-width: 173px;
+  margin-bottom: 41px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__email {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 56px;
+}
+
+.header__logout {
+  background: none;
+  border: none;
+  color: #a9a9a9;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header__line {
+  border: 1px solid #545454;
+  max-width: 880px;
+  margin: 0px auto 0px;
+}
+
+.header__menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 880px) {
+  .header {
+    max-width: 700px;
+    margin: 45px auto 0px;
+  }
+
+  .header__content {
+    max-width: 700px;
+  }
+
+  .header__logo {
+    max-width: 150px;
+  }
+
+  .header__line {
+    border: 1px solid #545454;
+    max-width: 700px;
+    margin: 0px auto 0px;
+  }
+}
+
+/* -------------------MODO CELULAR------------*/
+
+@media screen and (max-width: 680px) {
+  .header {
+    max-width: 320px;
+    margin: 28px auto 0px;
+  }
+
+  .header__content {
+    max-width: 320px;
+  }
+
+  .header__logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    max-width: 126px;
+  }
+
+  .header__line {
+    border: 1px solid #545454;
+    max-width: 320px;
+    margin: 0;
+  }
+
+  .header__container {
+    display: none;
+  }
+
+  .header__menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 19px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+  }
+
+  .header__menu-line {
+    width: 24px;
+    height: 2px;
+    border: 3px solid #ffffff;
+  }
+
+  .header__close-icon {
+    font-size: 24px;
+    color: white;
+  }
+
+  .header__mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+  }
+
+  .header__email {
+    color: white;
+    margin: 40px auto 0px;
+  }
+
+  .header__logout {
+    margin: 12px 0;
+  }
+
+  .header__line--mobile {
+    width: 100%;
+    max-width: 320px;
+    margin: 46px auto 27px;
+    border: 1px solid #545454;
+  }
+}
