@@ -13,6 +13,7 @@ const { requestLogger, errorLogger } = require('./middleware/logger.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
 // Conexão com MongoDB
 const mongoURI = `mongodb+srv://vanessaldrn:${process.env.MONGO_URI}@webproject.pjvezil.mongodb.net/mydb?retryWrites=true&w=majority&appName=webproject`;
 
