@@ -41,11 +41,15 @@ Aplicação completa com **frontend em React** e **backend em Node.js**, conecta
 
 ✴️ **Repositório GitHub**
 
+https://github.com/vanessanascimento28/web_project_api_full.git
+
 ---
 
 ✴️ Links de acesso
 
 - 🖥️ Front-end (interface do usuário):
+
+https://fe-web-project-api-full.vercel.app/
 
 - 🔌 Back-end (API Node.js):
 
