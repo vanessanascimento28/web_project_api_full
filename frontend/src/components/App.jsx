@@ -57,7 +57,7 @@ function App() {
       setLoggedIn(true);
       navigate("/");
     } catch (error) {
-      // O alert("Erro no token!") acontece porque a API está rejeitando o token, pois temos um fixo feito em outro projeto.
+      
     }
   }, [navigate, location.pathname]);
 
