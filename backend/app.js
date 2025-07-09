@@ -5,25 +5,27 @@ const usersRouter = require('./routes/users.js');
 const cardsRouter = require('./routes/cards.js');
 const auth = require('./middleware/auth.js');
 const { login, createUser } = require('./controllers/users.js');
-require('dotenv').config();
+require('dotenv').config(); // Carrega variáveis do .env
 const errorHandler = require('./middleware/errorHandler.js');
 const { errors } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middleware/logger.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.use(cors());
+
 // Conexão com MongoDB
-mongoose.connect('mongodb://localhost:27017/aroundb', {
+const mongoURI = `mongodb+srv://vanessaldrn:${process.env.MONGO_URI}@webproject.pjvezil.mongodb.net/mydb?retryWrites=true&w=majority&appName=webproject`;
+
+
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
   .then(() => console.log('Conectado ao MongoDB com sucesso!'))
   .catch((err) => console.error('Erro ao conectar ao MongoDB:', err));
 
+app.use(cors());
 app.use(requestLogger);
-
-// Middleware para interpretar JSON
 app.use(express.json());
 
 // Rotas públicas (login e cadastro)
@@ -37,18 +39,15 @@ app.use(auth);
 app.use('/users', usersRouter);
 app.use('/cards', cardsRouter);
 
-// Rota para qualquer outra coisa (404)
+// Rota 404
 app.use((req, res) => {
   res.status(404).send({ message: 'A solicitação não foi encontrada' });
 });
 
 app.use(errorLogger);
-
-// Middleware para erros de validação do Celebrate
 app.use(errors());
 app.use(errorHandler);
 
-// Inicializa o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
