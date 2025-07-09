@@ -142,7 +142,9 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const request = card.isLiked
+    const isLiked = card.likes.includes(currentUser._id);
+    
+    const request = isLiked
       ? api.removeLike(card._id)
       : api.updateLike(card._id);
 

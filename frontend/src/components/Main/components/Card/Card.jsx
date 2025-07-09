@@ -5,7 +5,7 @@ import blackHeartIcon from "../../../../images/BlackHeart.svg";
 import CurrentUserContext from "../../../../contexts/CurrentUserContext";
 
 function Card({ card, handleDeleteCard, handleCardLike, onCardClick }) {
-  const currentUser = useContext(CurrentUserContext);
+  const { currentUser } = useContext(CurrentUserContext);
 
   const isOwn = card.owner?._id === currentUser._id;
 
