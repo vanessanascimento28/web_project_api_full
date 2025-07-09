@@ -12,14 +12,21 @@ function Register({ setTooltipOpen, setTooltipSuccess, setTooltipMessage }) {
     e.preventDefault();
 
     try {
-      const response = await register({ email, password });
+      const response = await register({
+        email,
+        password,
+        name: "Novo usuário",
+        about: "Explorador iniciante",
+        avatar: "https://pictures.s3.yandex.net/resources/avatar_1604080799.jpg",
+      });
+
       const returnData = await response.json();
 
       if (!response.ok) {
         throw new Error(returnData.error || "Erro desconhecido ao registrar.");
       }
 
-      if (!returnData.data?.email || !returnData.data?._id) {
+      if (!returnData.email || !returnData._id) {
         throw new Error("Dados incompletos no retorno da API.");
       }
 
