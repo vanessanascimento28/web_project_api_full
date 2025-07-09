@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "https://web-project-api-full-pcts.onrender.com";
 
 // Registro
 export const register = async ({ email, password }) => {
