@@ -1,13 +1,13 @@
 export const BASE_URL = "https://web-project-api-full-pcts.onrender.com";
 
 // Registro
-export const register = async ({ email, password }) => {
+export const register = async ({ email, password, name, about, avatar }) => {
     return fetch(`${BASE_URL}/signup`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, name, about, avatar }),
     });
 };
 
