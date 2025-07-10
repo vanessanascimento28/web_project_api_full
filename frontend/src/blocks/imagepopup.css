@@ -1,13 +1,14 @@
-.imagepopup{
+.imagepopup {
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
+  left: 0;
   display: none;
 }
 
-.imagepopup__overlay{
+.imagepopup__overlay {
   margin: 90px auto 0;
   box-shadow: 0px 0px 25px 0px #00000026;
   display: flex;
@@ -15,7 +16,7 @@
   position: relative;
 }
 
-.imagepopup__close-button{
+.imagepopup__close-button {
   max-width: 40px;
   height: 40px;
   position: absolute;
@@ -42,7 +43,7 @@
   color: #ffffff;
 }
 
-.imagepopup__image{
+.imagepopup__image {
   max-width: 75vw;
   max-height: 75vh;
 }
