@@ -20,11 +20,20 @@ function ImagePopup({ card, onClose }) {
     };
   }, [isOpen, onClose]);
 
+
+  function handleOverlayClick(e) {
+    
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  }
+
   return (
     <div
       className={`imagepopup ${isOpen ? "imagepopup_opened" : ""}`}
       role="dialog"
       aria-hidden={!isOpen}
+      onClick={handleOverlayClick}
     >
       <div className="imagepopup__overlay">
         <button
